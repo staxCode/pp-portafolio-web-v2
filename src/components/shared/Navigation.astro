@@ -24,6 +24,15 @@ const isActive = (path: string) => {
   nav {
     display: flex;
     align-items: center;
+    justify-content: center; /* Centrar los elementos dentro del nav */
+    position: fixed; /* Fijar el nav en la parte superior */
+    top: 0;
+    left: 0; /* Asegurarse de que el nav comience desde el borde izquierdo */
+    width: 100%; /* Asegurarse de que el nav ocupe todo el ancho */
+    background: var(--background-color); /* Asegurarse de que el fondo sea visible */
+    z-index: 1000; /* Asegurarse de que el nav esté por encima de otros elementos */
+    padding: 1rem; /* Añadir padding para que el contenido no esté pegado al borde */
+    backdrop-filter: blur(10px); /* Añadir efecto borroso */
   }
 
   .nav-links {

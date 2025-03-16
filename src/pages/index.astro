@@ -1,10 +1,10 @@
 ---
-import Section from "../components/ui/Section.astro";
+// import Section from "../components/ui/Section.astro";
 import { getCollection, getEntry } from "astro:content";
-import type { CollectionEntry } from "astro:content";
+// import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../components/layout/BaseLayout.astro";
-import ContentList from "../components/shared/ContentList.astro";
-import Container from "../components/ui/Container.astro";
+// import ContentList from "../components/shared/ContentList.astro";
+// import Container from "../components/ui/Container.astro";
 
 const siteConfig = await getEntry("site", "home");
 if (!siteConfig) {
@@ -13,36 +13,36 @@ if (!siteConfig) {
 
 const site = siteConfig.data;
 
-const formatDate = (date: Date | undefined) => {
-  if (!date) return "";
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-  });
-};
+// const formatDate = (date: Date | undefined) => {
+//   if (!date) return "";
+//   return date.toLocaleDateString("en-US", {
+//     month: "short",
+//     day: "numeric",
+//   });
+// };
 
-const posts = await getCollection("blog", ({ data }: CollectionEntry<"blog">) => {
-  return import.meta.env.PROD ? !data.draft : true;
-});
-const latestPosts = posts
-  .sort(
-    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
-      b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
-  )
-  .slice(0, 3);
+// const posts = await getCollection("blog", ({ data }: CollectionEntry<"blog">) => {
+//   return import.meta.env.PROD ? !data.draft : true;
+// });
+// const latestPosts = posts
+//   .sort(
+//     (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+//       b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+//   )
+//   .slice(0, 3);
 
-const experiences = await getCollection("experience");
-const sortedExperiences = experiences.sort(
-  (a: CollectionEntry<"experience">, b: CollectionEntry<"experience">) =>
-    b.data.startDate.getTime() - a.data.startDate.getTime()
-);
+// const experiences = await getCollection("experience");
+// const sortedExperiences = experiences.sort(
+//   (a: CollectionEntry<"experience">, b: CollectionEntry<"experience">) =>
+//     b.data.startDate.getTime() - a.data.startDate.getTime()
+// );
 
-const projects = await getCollection("projects");
-const featuredProjects = projects.filter((project: CollectionEntry<"projects">) => project.data.featured).slice(0, 3);
+// const projects = await getCollection("projects");
+// const featuredProjects = projects.filter((project: CollectionEntry<"projects">) => project.data.featured).slice(0, 3);
 ---
 
 <BaseLayout title={`${site.name} - Portfolio`} description={site.introduction}>
-  <Container>
+  <!-- <Container>
     <section class="hero">
       <h1>{site.name}</h1>
       <p class="subtitle">{site.title}</p>
@@ -134,7 +134,7 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
         }
       </div>
     </section>
-  </Container>
+  </Container> -->
 </BaseLayout>
 
 <style>
