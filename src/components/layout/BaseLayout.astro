@@ -12,7 +12,7 @@ import interLightWoff2 from "@fontsource/inter/files/inter-latin-300-normal.woff
 import interRegularWoff2 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
 import interMediumWoff2 from "@fontsource/inter/files/inter-latin-500-normal.woff2?url";
 import robotoMonoRegularWoff2 from "@fontsource/roboto-mono/files/roboto-mono-latin-400-normal.woff2?url";
-import { ClientRouter } from "astro:transitions";
+// import { ClientRouter } from "astro:transitions";
 import Navigation from "../shared/Navigation.astro";
 
 interface Props {
@@ -38,7 +38,8 @@ const { title, description, image = "/default-og-image.jpg", canonicalURL = Astr
     <link rel="preload" href={interRegularWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href={interMediumWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href={robotoMonoRegularWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
-
+    
+    <!-- TODO: Revisar luego esta etiqueta -->
     <link rel="canonical" href={canonicalURL} />
 
     <meta property="og:type" content="website" />
@@ -47,16 +48,18 @@ const { title, description, image = "/default-og-image.jpg", canonicalURL = Astr
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
+    <!-- 
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={Astro.url} />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
+      <meta property="twitter:image" content={image} /> 
+    -->
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <ClientRouter />
-    <script is:inline>
+    <!-- <ClientRouter /> -->
+    <!-- <script is:inline>
       // Always use dark theme
       document.documentElement.setAttribute("data-theme", "dark");
 
@@ -74,7 +77,7 @@ const { title, description, image = "/default-og-image.jpg", canonicalURL = Astr
           document.documentElement.classList.add("theme-transition");
         }, 1000);
       });
-    </script>
+    </script> -->
   </head>
   <body>
     <div class="top-glow" transition:persist></div>
@@ -82,7 +85,7 @@ const { title, description, image = "/default-og-image.jpg", canonicalURL = Astr
       <div class="nav-container">
         <Navigation />
       </div>
-      <main><slot /></main>
+      <!-- <main><slot /></main> -->
     </main>
     <div class="bottom-glow" transition:persist></div>
   </body>

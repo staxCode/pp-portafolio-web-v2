@@ -4,7 +4,7 @@ import { getCollection, getEntry } from "astro:content";
 // import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../components/layout/BaseLayout.astro";
 // import ContentList from "../components/shared/ContentList.astro";
-// import Container from "../components/ui/Container.astro";
+import Container from "../components/ui/Container.astro";
 
 const siteConfig = await getEntry("site", "home");
 if (!siteConfig) {
@@ -42,8 +42,8 @@ const site = siteConfig.data;
 ---
 
 <BaseLayout title={`${site.name} - Portfolio`} description={site.introduction}>
-  <!-- <Container>
-    <section class="hero">
+  <Container>
+    <!-- <section class="hero">
       <h1>{site.name}</h1>
       <p class="subtitle">{site.title}</p>
       <p class="introduction">{site.introduction}</p>
@@ -59,7 +59,8 @@ const site = siteConfig.data;
         )
       }
     </section>
-
+     -->
+    <!-- 
     <Section>
       <div class="section-header">
         <h2>{site.sections.blog.title}</h2>
@@ -134,7 +135,8 @@ const site = siteConfig.data;
         }
       </div>
     </section>
-  </Container> -->
+    -->
+  </Container>
 </BaseLayout>
 
 <style>
